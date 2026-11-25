@@ -1,0 +1,29 @@
+import math
+
+def f(x):
+  return 2 * x * math.cos(2 * x)
+
+x = 2.0
+h = 0.1
+x_analitik = 4.747133
+
+turun_maju = (f(x + h) - f(x)) / h
+galat_maju = abs(x_analitik - turun_maju)
+
+turun_mundur = (f(x) - f(x - h)) / h
+galat_mundur = abs(x_analitik - turun_mundur)
+
+turun_tengah = (f(x + h) - f(x - h)) / (2 * h)
+galat_tengah = abs(x_analitik - turun_tengah)
+
+print(f"Nilai x = {x}")
+print(f"Nilai h = {h}")
+print("=" * 50)
+print(f"Nilai Analitik = {x_analitik}")
+print(f"Turun maju: {turun_maju:.6f}")
+print(f"Turun mundur: {turun_mundur:.6f}")
+print(f"Beda Tengah = {turun_tengah:.6f}")
+print(f"galat maju = {galat_maju:.6f}")
+print(f"galat mundur = {galat_mundur:.6f}")
+print(f"galat tengah = {galat_tengah:.6f}")
+print('='* 50)
